@@ -1,0 +1,16 @@
+Per crear el tsconfig-json 
+escriure a la terminal> tsc -init
+
+//exemple
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "module": "commonjs",
+        "noImplicitAny": false,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "sourceMap": false,
+        "experimentalDecorators":true
+    }
+
+}

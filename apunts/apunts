@@ -1,0 +1,24 @@
+(prefix sudo per linux)
+
+Crear projecte --> ng new nom-del-projecte 
+(no ferho en sudo pq després necessites privilegis dadmin)
+
+Obrir el projecte --> ng serve -o
+
+Crear component --> ng generate component adreça-carpeta/nom-del-component 
+(ex --> components/shared/navbar)
+(generate componnt es pot abreviar --> g c)
+(Per no crear un arxiu css al component, després de l'adreça afegim --> -is)
+(si movem la carpeta d'un component a una altra carpeta que no és on l'hem creat, hem d'actualitzar l'import de l'arxiu app.module.ts amb la nova direcció)
+
+Si afegim llibreries amb arxius (no cdn), les hem d'afegir a la carpeta assets
+
+Per crear un arxiu de rutes creem un arxiu app.routes.ts dins la carpeta app
+A dins podem crear l'estructura fent servir el snippet --> ng-router-appmodule
+(fent servir els snippets del "Angular 7 Snippets..." en vsc)
+Crear les rutes amb l'estructura donada
+Afegira app.module l'import de la classe i afegir a la llista d'imports del decorador @NgModule
+Pq les pàgines es carreguin, fer un div container que contingui --> <router-outlet></router-outlet>
+
+En els links en comptes de href="" fem servir --> [routerLink]= "['path-de-la-ruta']"
+(el path de la ruta l'hem especificat a app.routes)
