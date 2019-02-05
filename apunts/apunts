@@ -1,3 +1,5 @@
+
+INICIAR PROJECTE
 (prefix sudo per linux)
 
 Crear projecte --> ng new nom-del-projecte 
@@ -5,6 +7,7 @@ Crear projecte --> ng new nom-del-projecte
 
 Obrir el projecte --> ng serve -o
 
+COMPONENT
 Crear component --> ng generate component adreça-carpeta/nom-del-component 
 (ex --> components/shared/navbar)
 (generate componnt es pot abreviar --> g c)
@@ -13,6 +16,7 @@ Crear component --> ng generate component adreça-carpeta/nom-del-component
 
 Si afegim llibreries amb arxius (no cdn), les hem d'afegir a la carpeta assets
 
+ROUTER
 Per crear un arxiu de rutes creem un arxiu app.routes.ts dins la carpeta app
 A dins podem crear l'estructura fent servir el snippet --> ng-router-appmodule
 (fent servir els snippets del "Angular 7 Snippets..." en vsc)
@@ -22,3 +26,49 @@ Pq les pàgines es carreguin, fer un div container que contingui --> <router-out
 
 En els links en comptes de href="" fem servir --> [routerLink]= "['path-de-la-ruta']"
 (el path de la ruta l'hem especificat a app.routes)
+per anar a una subpàgina hem d'afegir / a l'inici--> [routerLink]= "['/path-de-la-ruta']"
+En el moment d'activar-se el link, podem aplicar una classe a l'element o al seu pare fent servir 
+la propeitat en l'etiqueta --> routerLinKActive="classe"
+
+Per agafar parametres de la url
+Importar ActivatedRoute del @angular/router
+Generar una variable de tipus ActivatedRoute al contructor
+Utilitzar els parametres -->
+this.var-tipus-ActivatedRoute.params.subscribe( params =>{
+      console.log(params); (o lo que sea)
+    })
+Podem especificar el parametre --> params["i"]
+(on i és el nom que li hem posat al paràmetre en el routes)
+
+
+
+SERVICES
+crear una carpeta dins la carpeta app amb el nom --> services
+crear un ts --> nom-component.services.ts
+(creem l'estructura fent servir snippet --> ng-service)
+En el app.module.ts, dins els providers del @NgModule, afegim el nom de la classe del serveie en concret
+(hem d'importar la classe pero normalment s'importa automaticament amb les extensions del vsc)
+(també s'ha d'importar al component on ho volem fer servir)
+
+Dins la classe del nom-component.service qe implementa OnInit es on hi anirà la info en forma d'arryay d'objectes
+Creem una funció (rollo get) a la classe per retornar la info --> return this.nomArray (o objecte especific de l'array)
+Podem definir l'estructura dels objectes fent una interface
+Des del component podrem cridar la info cridant aquesta funció get
+
+Podem duplicar una estructura html introduint a la seva etiqueta -->
+*ngFor="let nom-item(ens inventem el nom aquí) of items(el array que hem creat)"
+Per introduir info dins un paramatre de l'etiqueta (rollo el src, class, alt, ...) ho posem entre [] i la info dins els ""-->
+[alt]="nom-item.característica-classe"
+Per introduir info com a string, ho posem entre {{ }} -->
+{{ nom-item.característica-classe }}
+
+
+
+
+
+
+
+
+
+
+

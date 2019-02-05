@@ -1,3 +1,16 @@
+.main_container{
+  margin-top:2rem;
+}
+
+body{
+  padding-bottom: 3rem;
+}
+
+.img-logo{
+  width:100px;
+  height: auto;
+}
+
 
 /*Animaciones*/
 .animated {
